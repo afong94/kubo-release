@@ -75,7 +75,7 @@ subjects:
 
 ---
 # ------------------- Dashboard Config ------------------- #
-  
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -85,7 +85,7 @@ metadata:
     addonmanager.kubernetes.io/mode: EnsureExists
 data:
   ca.pem: |
-<%= link("kube-apiserver").p("tls.kubernetes.ca").lines.map! { |line| line.prepend("    ") }.join -%>
+<%= p("tls.heapster.ca").lines.map! { |line| line.prepend("    ") }.join -%>
 ---
 # ------------------- Dashboard Deployment ------------------- #
 
